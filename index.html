@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.5/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+     <script src="minter.js"></script>
+
+    <title>Breakouts! minter</title>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://twitter.com/Break_Outs" target="_blank">
+            <img src="https://pbs.twimg.com/profile_images/1526177385036791808/yssFuqTW_400x400.jpg" alt="" width="40" height="30" class="d-inline-block align-text-top">
+          Breakouts!</a>
+        
+       
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://opensea.io/" target="_blank">Marketplace</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="burn.html" >Burn</a>
+              </li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div style="margin-top: 60px" class="row text-center">
+
+          <h1>Breakouts!NFT minter </h1>
+
+      </div>
+
+      <div class="row text-right">
+          <div class="col-sm-9"></div>
+        <div class="col-sm-3 pt-3">
+          <button id="connect" class="btn btn-dark rounded-pill" onclick="loginWithEth()">
+            Connect with Metamask
+          </button>
+        </div>
+      </div>
+
+      
+
+      <div class="container py-5 px-md-5">
+        <div id="carouselExampleIndicators" class="carousel slide mx-2" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="bo-nft-001.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="bo-nft-001.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="bo-nft-001.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+      </div>
+
+   <div class="row">
+       <div class=col-2></div>
+        <div class="row py-3 align-items-center border bg-light col-8">
+            <div class="col-5">
+          <input type="text" class="form-control  border" id="pass" name="name"placeholder="password"></div>
+        <div class="col-3 text-center"><button id="mint" class="btn-lg btn-dark  border">
+              Mint🐣
+            </button></div>
+            <div class="col-3 text-center"><button id="mint-special" class="btn-lg btn-dark  border">
+                mint🐔
+              </button></div>
+        </div> 
+
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
