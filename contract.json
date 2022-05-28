@@ -457,5 +457,6 @@
             "stateMutability": "nonpayable",
             "type": "function"
         }
-    ]
+    ],
+     "specialpass":"528"
 }
