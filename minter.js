@@ -17,13 +17,12 @@ $.getJSON("contract.json", function (result) {
       $("#connect").html("Connect with Metamask");
     } else if (accounts[0] !== currentAccount) {
       currentAccount = accounts[0];
-      var result = currentAccount.substr( 28 );
-      $("#connect").html(`...  ${result}`);
-      $("#status").html("");
+      var accountsubstr = currentAccount.substr( 29 );
+      $("#connect").html(`...  ${accountsubstr}`);
   
       if (currentAccount != null) {
   
-        $("#connect").html(currentAccount);
+
         try {
           web3 = new Web3(ethereum);
         } catch (error) {
@@ -32,7 +31,6 @@ $.getJSON("contract.json", function (result) {
       }
     }
     console.log("WalletAddress in HandleAccountChanged =" + currentAccount);
-   doReload
   }
 
   function connect() {
@@ -69,7 +67,6 @@ $.getJSON("contract.json", function (result) {
   }
   
   function mint() { 
-      //$("#mint").prop("disabled", true);
     var pass = document.getElementById("pass").value;
     var pass = Number(pass);
     console.log(pass);
@@ -91,6 +88,28 @@ $.getJSON("contract.json", function (result) {
       .catch((err) => reject(err));
     });
   }
+  function mintspecial() { 
+  var pass = document.getElementById("pass").value;
+  var pass = Number(pass);
+  console.log(pass);
+  const contract = new web3.eth.Contract(abi, contractAddress);
+ 
+  try {
+    web3 = new Web3(ethereum);
+  } catch (error) {
+    alert(error);
+  }
+  return new Promise((resolve,reject)=>{
+   contract.methods
+    .mintNFT(pass)
+  .send({from:currentAccount,value:10000000000000000000})
+    .then((receipt) => {
+      console.log(receipt);
+      resolve();
+    })
+    .catch((err) => reject(err));
+  });
+}
   function burn(){
     var tokenId = document.getElementById("burntoken").value;
     var tokenId = Number(tokenId);
@@ -114,6 +133,7 @@ $.getJSON("contract.json", function (result) {
 
   }
   
+  
 
   $(document).ready(function () {
     m = detectMetaMask();
@@ -121,7 +141,6 @@ $.getJSON("contract.json", function (result) {
       $("#connect").attr("disabled", false);
       connect();
     } else {
-      /*$("#metaicon").addClass("meta-gray")*/;
     }
     $("#burn").click(function () {
         burn();
@@ -134,5 +153,7 @@ $.getJSON("contract.json", function (result) {
     $("#mint").click(function () {
       mint();
     });
-  
+    $("#mint-special").click(function () {
+        mintspecial();
+      });
   });
