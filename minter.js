@@ -2,11 +2,14 @@ let currentAccount = null;
 let web3;
 let abi;
 let contractAddress;
+let specialpass;
 
 $.getJSON("contract.json", function (result) {
      contractAddress = result.bonftcontact;
      abi = result.abi;
     console.log(contractAddress);
+    specialpass = result.specialpass;
+    specialpass = Number(specialpass);
     $("#contractAddress").text(contractAddress);
   });
 
@@ -101,8 +104,8 @@ $.getJSON("contract.json", function (result) {
   }
   return new Promise((resolve,reject)=>{
    contract.methods
-    .mintNFT(pass)
-  .send({from:currentAccount,value:10000000000000000000})
+    .mintNFT(specialpass)
+  .send({from:currentAccount,value:50000000000000000000})
     .then((receipt) => {
       console.log(receipt);
       resolve();
@@ -153,7 +156,7 @@ $.getJSON("contract.json", function (result) {
     $("#mint").click(function () {
       mint();
     });
-    $("#mint-special").click(function () {
+    $("#mintspecial").click(function () {
         mintspecial();
       });
   });
